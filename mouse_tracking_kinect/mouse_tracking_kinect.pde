@@ -61,7 +61,7 @@ void draw() {
     fill(0, 0, 0);
     ellipse(mouseX, mouseY, 10, 10);
     println(mouseX + " : " + mouseY);
- 
+
   }
 
 // Adjust the threshold with key presses
