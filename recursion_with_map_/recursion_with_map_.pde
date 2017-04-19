@@ -3,7 +3,7 @@ int x, y, r, r2;
 int rSize = 5; 
 
 void setup (){
-  size(1357, 628);
+  size(1920, 1080);
   background(255, 255, 255);
   world = loadImage("transparentworldmap.png");
   int dim = width*height;
