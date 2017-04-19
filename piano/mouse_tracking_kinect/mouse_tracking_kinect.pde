@@ -16,11 +16,11 @@ SoundFile soundfile;
 
 
 void setup() {
-  size(640,360);
+  size(1920,1080);
   kinect = new Kinect(this);
   tracker = new KinectTracker();
   
-  soundfile = new SoundFile(this, "vibraphon.wav");  
+  soundfile = new SoundFile(this, "vibraphon.aiff");  
   soundfile.loop();  
 }
 
