@@ -53,7 +53,7 @@ void draw() {
   text("threshold: " + t + "    " +  "framerate: " + int(frameRate) + "    " + 
     "UP increase threshold, DOWN decrease threshold", 10, 500);
     
-  soundfile.rate(map(mouseX, 0, width, 0.25, 4.0)); 
+  soundfile.rate(map(mouseX * 3, 0, width, 0.25, 4.0)); 
   
   // Map mouseY from 0.2 to 1.0 for amplitude  
   soundfile.amp(map(mouseY, 0, width, 0.2, 1.0)); 
