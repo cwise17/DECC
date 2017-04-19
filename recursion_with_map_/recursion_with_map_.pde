@@ -5,7 +5,7 @@ int rSize = 5;
 void setup (){
   size(1920, 1080);
   background(255, 255, 255);
-  world = loadImage("transparentworldmap.png");
+  world = loadImage("worldmap.png");
   int dim = width*height;
   frameRate(20);
   
