@@ -36,22 +36,22 @@ void draw() {
   PVector v1 = tracker.getPos();
   fill(50, 100, 250, 200);
   noStroke();
-  ellipse(v1.x, v1.y, 20, 20);
+  //ellipse(v1.x, v1.y, 20, 20);
 
   // Let's draw the "lerped" location
   PVector v2 = tracker.getLerpedPos();
   fill(100, 250, 50, 200);
   noStroke();
-  ellipse(v2.x, v2.y, 20, 20);
+  //ellipse(v2.x, v2.y, 20, 20);
   
   mouseX = int(v2.x);
   mouseY = int(v2.y);
 
   // Display some info
   int t = tracker.getThreshold();
-  fill(0);
-  text("threshold: " + t + "    " +  "framerate: " + int(frameRate) + "    " + 
-    "UP increase threshold, DOWN decrease threshold", 10, 500);
+  //fill(0);
+  //text("threshold: " + t + "    " +  "framerate: " + int(frameRate) + "    " + 
+  //  "UP increase threshold, DOWN decrease threshold", 10, 500);
     
   soundfile.rate(map(mouseX * 3, 0, width, 0.25, 4.0)); 
   
@@ -62,7 +62,7 @@ void draw() {
   soundfile.pan(map(mouseY, 0, width, -1.0, 1.0));  
   
   fill(0, 0, 0);
-  ellipse(mouseX, mouseY, 10, 10);
+  //ellipse(mouseX, mouseY, 10, 10);
   println(mouseX + " : " + mouseY);
  
   }
