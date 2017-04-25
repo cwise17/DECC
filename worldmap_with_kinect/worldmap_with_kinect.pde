@@ -49,7 +49,7 @@ void setup() {
         world.pixels[i] = color(r, g, b);
       }
   }
-  world.updatePixels();s
+  world.updatePixels();
 
 }
 

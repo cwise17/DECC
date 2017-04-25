@@ -25,7 +25,7 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  //background(255);
 
   // Run the tracking analysis
   tracker.track();
@@ -62,7 +62,7 @@ void draw() {
   soundfile.pan(map(mouseY, 0, width, -1.0, 1.0));  
   
   fill(0, 0, 0);
-  //ellipse(mouseX, mouseY, 10, 10);
+  ellipse(mouseX, mouseY, 10, 10);
   println(mouseX + " : " + mouseY);
  
   }

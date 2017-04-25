@@ -105,7 +105,7 @@ class KinectTracker {
     display.updatePixels();
 
     // Draw the image
-   // image(display, 0, 0);
+   image(display, 0, 0);
   }
 
   int getThreshold() {
