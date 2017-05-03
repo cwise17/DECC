@@ -15,7 +15,7 @@ Kinect kinect;
 
 //Variables for center of ellipse, speed of ellipse, and size of circle. 
 int size1; 
-int n = 10;
+int n = 50;
 int [] x = new int[n];
 int [] y = new int[n];
 int [] vx = new int[n];
@@ -69,33 +69,53 @@ void draw() {
     //This says that when all of the y values are greater than or equal to the bottom of the screen, the ellipses will change direction - or velocity becomes negative. 
     if (y[i] >= 1080-50) {
       vy[i] = -vy[i];
+      y[i] = 548;
     }
     
    //This changes the direction of the y again, but when it hits the top of the screen.
     if (y[i] <= 50) {
       vy[i] = -vy[i];
+      y[i] = 52;
     }
    
     //This changes the direction of the x, but when it hits the right side of the screen.
     if (x[i] >= 1920-50) {
       vx[i] = -vx[i];
+      x[i] = 548;
     }
     
     //This changes the direction of the x, but when it hits the left side of the screen.
     if (x[i] <= 50) {
       vx[i] = -vx[i];
+      x[i] = 52;
     }
-      
-   
+    //MouseX and mouseY positions (final)
+    int mx = mouseX;
+    int my = mouseY;
+    //Previous mouseX and mouseY positions (initial)
+    int pmx = pmouseX;
+    int pmy = pmouseY;
+    //MouseX and mouseY velocity vector (chance in distance (final - initial) over 1 (time))
+    int vmx = mx-pmx;
+    int vmy = my-pmy; 
+    
+    ellipse(mx, my, size1, size1);
     ellipse(x[i],y[i],size1,size1);
     d = dist(mx,my,x[i],y[i]);
     
     if (d <= radius + radius) {
       fill(random(255),random(255),random(255),random(255));
+      //Changes directions 
       vx[i] = -vx[i];
       vy[i] = -vy[i]; 
-      x[i] = x[i] + vx[i];
-      y[i] = y[i] + vy[i];
+     
+      
+      //Adds velocity
+      x[i] = x[i] + vmx;
+      y[i] = y[i] + vmy;
+      mx = my - vmx;
+      my = my - vmy;
+
     }
 
   }
@@ -118,8 +138,8 @@ void draw() {
   noStroke();
   ellipse(mx, my, size1, size1);
   
-  mx = int(v2.x)*3 ;
-  my = int(v2.y)*2 ;
+  mx = int(v2.x) ;
+  my = int(v2.y) ;
 
   // Display some info
   int t = tracker.getThreshold();
