@@ -138,8 +138,8 @@ void draw() {
   noStroke();
   ellipse(mx, my, size1, size1);
   
-  mx = int(v2.x) ;
-  my = int(v2.y) ;
+  mx = int(v2.x)*3 ;
+  my = int(v2.y)*2 ;
 
   // Display some info
   int t = tracker.getThreshold();
