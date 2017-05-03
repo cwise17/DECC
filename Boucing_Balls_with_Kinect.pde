@@ -105,6 +105,7 @@ void draw() {
     
     if (d <= radius + radius) {
       fill(random(255),random(255),random(255),random(255));
+      frameRate(100);
       //Changes directions 
       vx[i] = -vx[i];
       vy[i] = -vy[i]; 
