@@ -8,7 +8,7 @@
 class KinectTracker {
 
   // Depth threshold
-  int threshold = 745;
+  int threshold = 900;
 
   // Raw location
   PVector loc;
@@ -105,7 +105,7 @@ class KinectTracker {
     display.updatePixels();
 
     // Draw the image
-   image(display, 0, 0);
+   //image(display, 0, 0);
   }
 
   int getThreshold() {

@@ -65,7 +65,7 @@ void draw() {
   PVector v1 = tracker.getPos();
   fill(50, 100, 250, 200);
   noStroke();
-  ellipse(v1.x, v1.y, 20, 20);
+  //ellipse(v1.x, v1.y, 20, 20);
 
   // Let's draw the "lerped" location
   PVector v2 = tracker.getLerpedPos();
@@ -91,7 +91,7 @@ void draw() {
   //float b = random(0, 255);
   stroke(255, 255, 255);
   noFill();
-  drawCircle(mouseX, mouseY, 100, 100);
+  drawCircle(mouseX * 3, mouseY * 2, 100, 100);
   
 
 
