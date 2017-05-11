@@ -127,8 +127,8 @@ void draw() {
    // Let's draw the "lerped" location
   v2 = tracker.getLerpedPos();
     
-  pmx = int (v2.x)*3;
-  pmy = int (v2.y)*2;
+  mx = int (v2.x)*3;
+  my = int (v2.y)*2;
    
   tracker.track();
   // Display some info
