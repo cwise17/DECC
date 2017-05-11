@@ -1,7 +1,7 @@
 int numwalks = 20; //number of walkers to generate 
 Walk [] walks; //list to hold all random walkers
 
-void setupRwalk() {
+void setup() {
   size(1920, 1080); //Dictates the size of the window
   walks= new Walk [numwalks];
   for (int i = 0; i < numwalks; i++){ //loops thru based on number of walkers I want
@@ -10,7 +10,7 @@ void setupRwalk() {
   background(255); //whitebackground 
 }
 
-void drawRwalk() {
+void draw() {
     for (Walk walk : walks){ //runs the walks function for all walkers
         walk.step(); //loops them to change
         walk.display(); //puts them on the screen

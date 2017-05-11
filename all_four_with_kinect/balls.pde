@@ -13,8 +13,8 @@ import org.openkinect.processing.*;
 //Variables for center of ellipse, speed of ellipse, and size of circle. 
 int size1; 
 int n = 50;
-int [] x = new int[n];
-int [] y  = new int[n];
+int [] x2 = new int[n];
+int [] y2  = new int[n];
 int [] vx = new int[n];
 int [] vy = new int[n];
 float d;
@@ -30,18 +30,18 @@ void setupBalls() {
   kinect = new Kinect(this);
   tracker = new KinectTracker();
  
-  for (int i = 0; i < x.length; i++) {
+  for (int i = 0; i < x2.length; i++) {
   
   //This sets the x and y positions of the ellipses to a random starting location.
   float f = random(50,1870); 
   int r = int(f);
   
-  x[i] = r;
+  x2[i] = r;
 
   f = random(50,1870);
   r = int(f);
   
-  y[i] = r;
+  y2[i] = r;
   
   /*f = random(1,3);
   r = int(f); 
@@ -60,34 +60,34 @@ void drawBalls() {
   background(10,10,70);
  
   //This array allows there to be an integer i for each ellipse starting at 0, when i is being increased by 1 so that the functions below apply to all ellipses in the above list.
-  for (int i = 0; i < x.length; i++) {
+  for (int i = 0; i < x2.length; i++) {
     
     //This says that all of the x and y values have a velocity and will move. 
-    x[i] = x[i] + vx[i]; 
-    y[i] = y[i] + vy[i];
+    x2[i] = x2[i] + vx[i]; 
+    y2[i] = y2[i] + vy[i];
     
     //This says that when all of the y values are greater than or equal to the bottom of the screen, the ellipses will change direction - or velocity becomes negative. 
-    if (y[i] >= 1080-50) {
+    if (y2[i] >= 1080-50) {
       vy[i] = -vy[i];
-      y[i] = 548;
+      y2[i] = 548;
     }
     
    //This changes the direction of the y again, but when it hits the top of the screen.
-    if (y[i] <= 50) {
+    if (y2[i] <= 50) {
       vy[i] = -vy[i];
-      y[i] = 52;
+      y2[i] = 52;
     }
    
     //This changes the direction of the x, but when it hits the right side of the screen.
-    if (x[i] >= 1920-50) {
+    if (x2[i] >= 1920-50) {
       vx[i] = -vx[i];
-      x[i] = 548;
+      x2[i] = 548;
     }
     
     //This changes the direction of the x, but when it hits the left side of the screen.
-    if (x[i] <= 50) {
+    if (x2[i] <= 50) {
       vx[i] = -vx[i];
-      x[i] = 52;
+      x2[i] = 52;
     }
     
 
@@ -97,8 +97,8 @@ void drawBalls() {
     
     ellipse(mx, my, size1, size1);
     stroke(100);
-    ellipse(x[i],y[i],size1,size1);
-    d = dist(mx,my,x[i],y[i]);
+    ellipse(x2[i],y2[i],size1,size1);
+    d = dist(mx,my,x2[i],y2[i]);
     
     if (d <= radius + radius) {
       fill(random(255),random(255),random(255),random(255));
@@ -108,8 +108,8 @@ void drawBalls() {
      
       
       //Adds velocity
-      x[i] = x[i] + vmx;
-      y[i] = y[i] + vmy;
+      x2[i] = x2[i] + vmx;
+      y2[i] = y2[i] + vmy;
       mx = my - vmx;
       my = my - vmy; 
 

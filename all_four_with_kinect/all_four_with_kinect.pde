@@ -11,7 +11,7 @@ import org.openkinect.processing.*;
 //Creates variables for the images for each program.
 PImage worldProgram;
 PImage pianoProgram;
-
+PImage ballsProgram;
 //This creates a variable that determines the state of the program. It determines which program the screen is showing. It is also initiating the state as 0, which is the menu screen.
 int state = 0;
 
@@ -23,6 +23,8 @@ void setup() {
   
   //Loads image of world map program.
   worldProgram = loadImage("world.png");
+  pianoProgram = loadImage("piano.jpeg");
+  ballsProgram = loadImage("balls.png");
 }
 
 void draw() {
@@ -84,14 +86,12 @@ void draw() {
 
 void drawMenu() {
   background(255, 255, 255);
-  //Draws image of world map program.
+  //Draws image of world map program on the top left corner of the screen.
   image(worldProgram, 0, 0); 
-  //green
-  fill(0, 255, 0);
-  rect(960, 0, 960, 540);
-  //blue
-  fill(0, 0, 255);
-  rect(0, 540, 960, 540);
+  //This draws the piano image on the top right corner of the screens. 
+  image(pianoProgram, 960, 0);
+  //Draws image of the bouncing balls program in the bottom left corner of the screen.
+  image(ballsProgram, 0, 540);
   //white
   fill(255, 255, 255);
   rect(960, 540, 960, 540);

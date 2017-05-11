@@ -10,8 +10,6 @@ import org.openkinect.processing.*;
 import processing.sound.*;
 
 // The kinect stuff is happening in another class
-KinectTracker tracker;
-Kinect kinect;
 SoundFile soundfile;
 
 
